@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Clinton';
+    src: url('clinton-semibold.ttf') format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Clinton';
+    src: url('clinton-extra-bold.ttf') format('truetype');
+    font-weight: 900;
+}

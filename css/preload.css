@@ -1,0 +1,65 @@
+* {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+::-webkit-scrollbar              { width: 10px; background: #777; }
+::-webkit-scrollbar-button       { display: none; }
+::-webkit-scrollbar-thumb        { background: #333; border-radius: 10px; }
+/*::-webkit-scrollbar-track        {  }
+::-webkit-scrollbar-track-piece  {  }
+::-webkit-scrollbar-corner       {  }
+::-webkit-resizer                {  }*/
+body {
+    font-family: 'Clinton';
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; }
+    body:not(.loaded) .page-content,
+    body:not(.loaded) footer {
+        display: none; }
+header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center; }
+    header .landing-wrap {
+        margin: auto;
+        overflow: visible; }
+        header .landing-wrap .logo-wrap {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding-bottom: 32px;
+            transition: max-height 1s cubic-bezier(0.2, 1, 0.3, 1), opacity 1s 1s cubic-bezier(0.2, 1, 0.3, 1); }
+            body.loaded header .logo-wrap {
+                opacity: 1;
+                max-height: 300px; }
+        header .landing-wrap h1 {
+            font-size: 64px;
+            letter-spacing: .5em;
+            font-weight: 900;
+            line-height: 1em;
+            /*margin: 1em auto 0;*/
+            margin: 0 auto;
+            color: #FD535F;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); }
+            body.loaded header h1 {
+                font-size: 36px;
+                letter-spacing: .2em; }
+            header .landing-wrap h1::before {
+                content: '';
+                background: linear-gradient(0deg, transparent, rgba(255,255,255,.5), transparent);
+                position: absolute;
+                height: 5em;
+                width: 2em;
+                top: -2em;
+                left: -7.5em;
+                transform: rotate(45deg);
+                animation: shader 2s infinite ease; }
+                body.loaded header .landing-wrap h1::before {
+                    left: calc(100% + 2.5em);
+                    animation: none; }
+                @keyframes shader         { to { left: calc(100% + 2.5em); } }
+                @-webkit-keyframes shader { to { left: calc(100% + 2.5em); } }
